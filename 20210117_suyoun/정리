@@ -1,1 +1,53 @@
-https://github.com/suyoun90/ML-ver.02/issues/1#issue-791959664
+### **모델성능평가** 
+- 모델을 만드는 이유는 일반화를 통해 미래(미실현) 예측을 추정하고자 하는 것
+- train data로 학습시키고 알고리즘을 계속해서 수정하여  최고의 성능을 발휘하는 모델을 선택함으로써 예측 성능을 높힘 
+- 모델을 서로 비교해서 좋은 모델을 선택해야하는데 이때 모델 평가 지표를 사용해서 성능을 평가함
+- 연속된 값에 대한 평가 지표(회귀 모델)와 분류에 대한 평가 지표를 다르게 사용
+
+![image](https://user-images.githubusercontent.com/63949445/105486890-982f2680-5cf2-11eb-8282-c87f7229ad3f.png)
+　
+
+**1. MAE (Mean Absolute Error)**
+![image](https://user-images.githubusercontent.com/63949445/105488822-96b32d80-5cf5-11eb-81c2-5fd4f8e7794f.png)
+ 
+- 모델의 예측값과 실제값의 차이를 모두 더함
+- 절댓값을 취하기 때문에 가장 직관적으로 알 수 있는 지표 
+- 그러나 절댓값을 취하기 때문에 underperformance 인지 overperformance인지 알 수 없음
+- (underperformance : 모델이 실제값보다 낮은 값으로 예측, overperformance : 모델이 실제값보다 높은 값으로 예측) 
+　
+
+**2. MSE (Mean Squared Error)**
+![image](https://user-images.githubusercontent.com/63949445/105489149-2527af00-5cf6-11eb-95fe-07f007fc6263.png)
+
+- 제곱을 하기 때문에 MAE와는 다르게 모델의 예측값과 실제값 차이의 면적의 합 개념
+- 특이값이 존재하면 MSE 수치가 많이 늘어나 특이값에 민감함
+ 　
+
+**3. RMSE (Root Mean Squared Error)**
+![image](https://user-images.githubusercontent.com/63949445/105489267-51433000-5cf6-11eb-8a28-65f15320a43f.png)
+
+- MSE에 Root를 씌운 값으로 오류 지표를 실제 값과 유사한 단위로 변환하여 해석이 쉬워짐
+　
+
+**4. MAPE (Mean Absolute Percentage Error)**
+![image](https://user-images.githubusercontent.com/63949445/105489327-661fc380-5cf6-11eb-9f56-29d0ec934ac4.png)
+
+- MAE를 퍼센트로 변환한 값으로 MSE보다 특이값에 덜 민감
+- MAE와 같은 단점을 가짐 
+- 추가적으로 모델에 대한 편향이 존재하므로 0 근처의 값에서는 사용하기 어려움
+　
+
+**5. RMSLE (Root Mean Square Logarithmic Error)**
+![image](https://user-images.githubusercontent.com/63949445/105489633-e2b2a200-5cf6-11eb-9302-04333cdbb9f2.png)
+
+- RMSE에 로그를 취한 값 
+- 아웃라이어가 있어도 변동폭이 크지 않아 특이값에 강함
+- 예측값과 실제값의 상대적 Error를 측정할 수 있음 
+- Under Estimation에 큰 패널티를 부여함 (실제값보다 예측값이 작을 때 패널티 부여)
+　
+
+**6. R2 Score (결정계수)**
+![image](https://user-images.githubusercontent.com/63949445/105489748-155c9a80-5cf7-11eb-9507-aea505210ee7.png)
+
+- 상대적으로 얼마나 성능이 잘 나오는지 측정하는 지표
+- RMSE나 MAE는 데이터의 scale에 따라 값이 천차만별이지만 R2는 상대적인 성능이므로 직관적으로 알 수 있음 
