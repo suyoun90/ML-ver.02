@@ -36,7 +36,7 @@ Boostrap이나 KNN 모델 기법을 기반으로 함
 3) 이 k개의 Sample 중 랜덤하게 1개의 Sample을 선택한다. (KNN Sample)
 4) 새로운 Synthetic Sample은 아래와 같이 계산한다. 
 
+본 과정을 일정 수 만큼 진행하면 아래 그림과 같이 새로운 합성 데이터가 생성됨을 알 수 있음 
 
+![image](https://user-images.githubusercontent.com/63949445/106374725-0649ac80-63c9-11eb-94bf-efd867101743.png)
 
-
-본 과정을 일정 수 만큼 진행하면 아래 그림과 같이 새로운 합성 데이터가 생성됨을 알 수 있다.
