@@ -15,7 +15,7 @@
   
 #### 
 2) Tomek Links (토멕링크)  
-![image](https://user-images.githubusercontent.com/63949445/108614725-7daab300-7440-11eb-982f-0a3c06682475.png)
+![image](https://user-images.githubusercontent.com/63949445/108614759-c6fb0280-7440-11eb-8d61-f8e8f68efa06.png)  
 -  (초록색 동그라미 친 부분) 서로 다른 클래스의 데이터 두 점을 연결  
 -  이 두 데이터 주변에 다른 임의의 '데이터 k' 존재  
 -  두 점을 연결한 데이터 모두 '데이터 k'와 각각 연결했을 때의 거리가 두 점을 연결한 거리보다 길다면 이 두 점간의 링크를 토멕링크라고 함  
