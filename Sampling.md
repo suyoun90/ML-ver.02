@@ -8,28 +8,27 @@
 
 #### ■ 종류 
 
-** 1) Random Under Sampling (RUS) **
+**1) Random Under Sampling (RUS)**
 -  다수의 클래스에 속해있는 관측치들 중 무작위로 샘플링 
 -  수행할 때마다 다른 결과가 도출됨 
 -  샘플링 마다 모델 성능이 달라지긴 하지만 의외로 괜찮게 사용되는 경우가 많음 
   
-#### 
-2) Tomek Links (토멕링크)  
+
+**2) Tomek Links (토멕링크)**  
 ![image](https://user-images.githubusercontent.com/63949445/108614759-c6fb0280-7440-11eb-8d61-f8e8f68efa06.png)  
 - Tomek links는 서로 다른 클래스에 속하는 항 쌍의 데이터를 뜻함  
 - 가까운 한 쌍의 데이터를 찾은 다음 그 중에서 다수 클래스(majority class)에 속하는 데이터를 제거하는 방법
 - 다수 클래스의 데이터를 제거함으로써 데이터 불균형 문제도 해결 되는 동시에 두 클래스간의 거리가 멀어지므로 분류 문제를 조금 더 수월하게 만들어줌  
 - 여전히 데이터 손실에 대한 문제를 갖고 있으므로 유의해야 함 
 
-####
-3) CNN (Condensed Nearest Neighbor)  
+**3) CNN (Condensed Nearest Neighbor)** 
 - 소수 클래스에 속하는 데이터 전체 A + 다수 클래스에 속하는 데이터 중 무작위로 선택한 하나의 데이터 B 로 구성된 Sub-데이터를 구성  
 - 다수 클래스에 속한 나머지 데이터들 중 하나씩 KNN에서 K=1인 1-Nearest Neighbors를 이용해 그 데이터가 무작위로 선택한 다수 클래스 데이터 한개 (B)와 가까운지, 소수 클래스(A) 중 어떤 것이든 그것과 가까운지를 판정
 - 다수 클래스에 속하는 나머지 데이터들 중 소수 클래스(A) 데이터와 더 가까운 데이터를 소수 클래스로 우선 분류 
 - 이후 1-Nearest Neighbors를 통해 정상적으로 분류된 다수 클래스 데이터를 언더 샘플링
 - 이 때 K는 반드시 1이어야 함 (자세한 설명은 김성범 교수님 강의 참고)
 
-####
-4) OSS(One-side Selection)  
+
+**4) OSS(One-side Selection)**
 - Tomel links와 CNN을 같이 수행하는 방식  
 - Tomel links로 분류 경계에 존재하는 데이터들을 언더샘플링 하는 동시에 CNN으로 분류가 잘 되는 데이터를 언더샘플링 할 수 있음  
